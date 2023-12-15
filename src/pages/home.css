@@ -1,0 +1,33 @@
+/* Home.css */
+
+.home-container {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.vector-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.divider {
+  border-bottom: 2px solid white;
+  margin: 20px 0;
+}
+
+.brand {
+  font-size: 24px;
+}
+
+.social-icons {
+  font-size: 28px;
+  margin-top: 20px;
+
+  a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+}
