@@ -5,16 +5,20 @@
   color: white;
   text-align: center;
   padding: 20px;
+  height: auto;
 }
 
 .vector-image {
-  max-width: 100%;
+  max-width: 30vw;
   height: auto;
+  margin-top: 20vh;
 }
 
 .divider {
   border-bottom: 2px solid white;
   margin: 20px 0;
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 
 .brand {
@@ -24,6 +28,7 @@
 .social-icons {
   font-size: 28px;
   margin-top: 20px;
+  color: white;
 
   a {
     color: white;
