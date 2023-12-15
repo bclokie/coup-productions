@@ -11,7 +11,7 @@
 .vector-image {
   max-width: 30vw;
   height: auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 .divider {
@@ -37,10 +37,11 @@
     color: white;
     margin: 0 10px;
     text-decoration: none;
+    transition: transform 0.3s; 
   }
-}
 
-.social-icons:hover {
-  color: #f5cb5c;
-  cursor: pointer;
+  a:hover {
+    transform: scale(1.2); 
+    cursor: pointer;
+  }
 }
