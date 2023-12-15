@@ -5,11 +5,11 @@
   color: white;
   text-align: center;
   padding: 20px;
-  height: auto;
+  height: 100vh;
 }
 
 .vector-image {
-  max-width: 30vw;
+  max-width: 25vw;
   height: auto;
   margin-top: 10vh;
 }
