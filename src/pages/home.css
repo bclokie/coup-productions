@@ -5,7 +5,8 @@
   color: white;
   text-align: center;
   padding: 20px;
-  height: 100vh;
+  height: 94vh;
+  overflow: hidden;
 }
 
 .vector-image {
