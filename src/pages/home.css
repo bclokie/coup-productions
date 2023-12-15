@@ -28,11 +28,19 @@
 .social-icons {
   font-size: 28px;
   margin-top: 20px;
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 28vw;
+  margin-right: 28vw;
 
   a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
   }
+}
+
+.social-icons:hover {
+  color: #f5cb5c;
+  cursor: pointer;
 }
