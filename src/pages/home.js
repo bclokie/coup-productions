@@ -6,7 +6,7 @@ import './Home.css'; // Import the corresponding CSS file
 const Home = () => {
   return (
     <div className="home-container">
-      <img src="path_to_your_vector_image.svg" alt="Vector Image" className="vector-image" />
+      <img src="path_to_your_vector_image.svg" alt="Logo" className="vector-image" />
       <div className="divider"></div>
       <div className="brand">
         <h2>coup.productions</h2>
