@@ -10,7 +10,7 @@ const Music = () => {
   const audioRef = useRef(null);
 
   const tracks = [
-    { id: 1, title: 'Song 1', src: 'path/to/song1.mp3' },
+    { id: 1, title: 'Claire De Lune', src: 'Clair-De-Lune.mp3' },
     { id: 2, title: 'Song 2', src: 'path/to/song2.mp3' },
     // Add more tracks as needed
   ];
