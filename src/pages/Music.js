@@ -7,6 +7,7 @@ const Music = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
 
   const tracks = [
@@ -28,6 +29,19 @@ const Music = () => {
     if (audioRef.current) {
       const currentTime = audioRef.current.currentTime;
       setCurrentTime(currentTime);
+    }
+  };
+
+  const loadedMetadataHandler = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const skipHandler = (value) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = value;
+      setCurrentTime(value);
     }
   };
 
@@ -62,16 +76,26 @@ const Music = () => {
             src={currentTrack.src}
             onTimeUpdate={timeUpdateHandler}
             onEnded={() => setIsPlaying(false)}
+            onLoadedMetadata={loadedMetadataHandler}
           />
           <div className="progress-bar">
             <div
               className="waveform"
               style={{
-                width: audioRef.current
-                  ? `${(currentTime / audioRef.current.duration) * 100}%`
-                  : '0%',
+                width: duration ? `${(currentTime / duration) * 100}%` : '0%',
+              }}
+              onClick={(e) => {
+                const clickPosition = e.nativeEvent.offsetX;
+                const progressBarWidth = e.currentTarget.offsetWidth;
+                const clickPercentage = clickPosition / progressBarWidth;
+                const newTime = clickPercentage * duration;
+                skipHandler(newTime);
               }}
             />
+          </div>
+          <div className="controls">
+            <button onClick={() => skipHandler(currentTime - 10)}>Skip Back</button>
+            <button onClick={() => skipHandler(currentTime + 10)}>Skip Ahead</button>
           </div>
         </div>
       )}
