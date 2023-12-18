@@ -16,19 +16,18 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
 
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
-    // Update the waveform visualization here (you can use the Web Audio API)
     waveformRef.current.seekTo(audioRef.current.currentTime / audioRef.current.duration);
   };
 
   useEffect(() => {
-    // Set up WaveSurfer for waveform visualization
+    // WaveSurfer implementation for waveform visualization
     waveformRef.current = WaveSurfer.create({
       container: '#waveform-container',
       waveColor: 'violet',
       progressColor: 'purple',
       cursorWidth: 0,
       barWidth: 2,
-      height: 150,
+      height: 100,
       responsive: true,
     });
 

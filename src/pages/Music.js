@@ -1,4 +1,4 @@
-// src/pages/Music.js
+// Music.js
 import React from 'react';
 import Song from '../components/Song';
 import './Music.css';
