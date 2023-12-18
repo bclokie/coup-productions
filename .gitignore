@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # songs
-/public/Clair-de-Lune.mp3
-
-package-lock.json
+*.mp3
+*.wav
+*.aiff
