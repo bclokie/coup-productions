@@ -1,6 +1,7 @@
 // Music.js
 
 import React, { useState, useRef, useEffect } from 'react';
+import WaveSurfer from 'wavesurfer.js';
 import './Music.css';
 
 const Music = () => {
@@ -9,6 +10,7 @@ const Music = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
+  const waveformRef = useRef(null);
 
   const tracks = [
     { id: 1, title: 'Clair De Lune', src: 'Clair-De-Lune.mp3' },
@@ -16,10 +18,27 @@ const Music = () => {
     // Add more tracks as needed
   ];
 
+  useEffect(() => {
+    // Initialize Wavesurfer when the component mounts
+    waveformRef.current = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: 'transparent',
+      progressColor: 'transparent',
+    });
+  }, []);
+
+  const initializeWaveform = (trackSrc) => {
+    // Load the audio file into Wavesurfer
+    waveformRef.current.load(trackSrc);
+  };
+
   const playPauseHandler = (track) => {
     if (currentTrack === null || currentTrack.id !== track.id) {
       setCurrentTrack(track);
       setIsPlaying(true);
+
+      // Initialize Wavesurfer and load the track
+      initializeWaveform(track.src);
     } else {
       setIsPlaying(!isPlaying);
     }
@@ -78,6 +97,7 @@ const Music = () => {
             onEnded={() => setIsPlaying(false)}
             onLoadedMetadata={loadedMetadataHandler}
           />
+          <div id="waveform" className="wavesurfer-container" />
           <div className="progress-bar">
             <div
               className="waveform"

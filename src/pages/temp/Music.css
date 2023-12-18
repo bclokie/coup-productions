@@ -56,3 +56,23 @@ body {
   width: 0;
   background-color: #66ff66; /* Adjust the color of the waveform */
 }
+
+.wavesurfer-container {
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  position: relative;
+}
+
+.wavesurfer-waveform {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333; /* Background color of the waveform container */
+}
+
+.wavesurfer-progress {
+  height: 100%;
+  background: #66ff66; /* Adjust the color of the progress bar */
+}
