@@ -8,6 +8,7 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const audioRef = useRef(null);
   const waveformRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  // eslint-disable-next-line
   const [currentTime, setCurrentTime] = useState(0);
 
   const handlePlayPause = () => {
