@@ -1,10 +1,12 @@
-// Song.js
+// src/components/Song.js
 import React, { useState, useRef, useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import WaveSurfer from 'wavesurfer.js';
 import './Song.css';
 
 const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const audioRef = useRef(null);
+  const waveformRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
 
@@ -15,15 +17,28 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);
     // Update the waveform visualization here (you can use the Web Audio API)
+    waveformRef.current.seekTo(audioRef.current.currentTime / audioRef.current.duration);
   };
 
   useEffect(() => {
-    // Set up your Web Audio API visualization here
+    // Set up WaveSurfer for waveform visualization
+    waveformRef.current = WaveSurfer.create({
+      container: '#waveform-container',
+      waveColor: 'violet',
+      progressColor: 'purple',
+      cursorWidth: 0,
+      barWidth: 2,
+      height: 150,
+      responsive: true,
+    });
+
+    waveformRef.current.load(audioSrc);
 
     return () => {
-      // Clean up any resources if needed
+      // Clean up WaveSurfer instance on component unmount
+      waveformRef.current.destroy();
     };
-  }, []);
+  }, [audioSrc]);
 
   return (
     <div className="song-container">
@@ -31,8 +46,8 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
       <div className="audio-controls">
         <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
       </div>
-      <div className="waveform-container">
-        {/* Include the canvas for waveform visualization here */}
+      <div className="waveform-container" id="waveform-container">
+        {/* Waveform visualization will be rendered here */}
       </div>
       <ReactAudioPlayer
         ref={audioRef}

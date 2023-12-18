@@ -16,7 +16,7 @@ const Music = () => {
 
   return (
     <div className="music-page">
-      <h1>Music Page</h1>
+      <h1>Music</h1>
       <div className="song-list">
         {songs.map((song, index) => (
           <Song

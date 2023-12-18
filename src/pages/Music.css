@@ -1,6 +1,11 @@
 /* src/pages/Music.css */
+body {
+  background-color: black;
+}
+
 .music-page {
   padding: 20px;
+  color: white;
 }
 
 .song-list {

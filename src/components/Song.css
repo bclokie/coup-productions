@@ -3,6 +3,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80vw;
+  background-color: white;
 }
 
 .song-container img {
