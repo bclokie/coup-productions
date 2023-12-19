@@ -16,7 +16,7 @@ const Home = () => {
         <a href="https://www.facebook.com/MarkOliverMusic" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook"></i>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/markoliverofficial/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-instagram"></i>
         </a>
         <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
