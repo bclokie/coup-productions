@@ -50,15 +50,9 @@ a:hover {
   }
 }
 
-@media screen and (orientation: portrait) {
-  nav {
-    height: 10vh;
-  }
+@media screen and (max-width: 768px) {
   ul {
-    font-size: 30px;
-  }
-  .logo-container {
-    max-width: 10vh;
-    height: 10vh;
+    font-size: 40px;
+    margin-left: -40px;
   }
 }

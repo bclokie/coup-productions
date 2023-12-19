@@ -20,7 +20,7 @@ const Home = () => {
         );
         return newLetters;
       });
-    }, 50);
+    }, 20);
 
     const revealLetters = () => {
       clearInterval(intervalId);
@@ -40,7 +40,7 @@ const Home = () => {
       }, 100);
     };
 
-    setTimeout(revealLetters, 10000);
+    setTimeout(revealLetters, 3000);
 
     // Cleanup intervals on component unmount
     return () => {
