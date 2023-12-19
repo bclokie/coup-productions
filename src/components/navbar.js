@@ -3,14 +3,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'; 
+import { useMusicContext } from './MusicContext';
 
 const Navbar = () => {
   const location = useLocation();
+  const { isMusicPlaying } = useMusicContext();
 
   return (
     <nav>
       <ul>
-        <div className="logo-container">
+      <div className={`logo-container ${isMusicPlaying ? 'spinning-logo' : ''}`}>
           {location.pathname !== '/' && <img src={'logo.png'} alt="Logo" />}
         </div>
         <li>

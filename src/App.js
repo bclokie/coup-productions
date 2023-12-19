@@ -8,18 +8,21 @@ import Home from './pages/Home';
 // import Events from './pages/Events';
 import Music from './pages/Music';
 // import Archive from './pages/Archive';
+import { MusicProvider } from './components/MusicContext';
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/music" element={<Music />} />
-        {/* <Route path="/info" element={<Info />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/archive" element={<Archive />} /> */}
-      </Routes>
+      <MusicProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/music" element={<Music />} />
+          {/* <Route path="/info" element={<Info />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/archive" element={<Archive />} /> */}
+        </Routes>
+      </MusicProvider>
     </Router>
   );
 };

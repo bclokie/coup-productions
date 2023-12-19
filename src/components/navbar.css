@@ -34,3 +34,16 @@ a:hover {
   height: 8vh;
   margin-right: 40px;
 }
+
+.spinning-logo {
+  animation: spin 2s linear infinite; /* Adjust the duration and timing function as needed */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

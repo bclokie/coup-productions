@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import './Song.css';
 import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp, FaVolumeDown } from 'react-icons/fa';
+import { useMusicContext } from './MusicContext';
 
 const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const audioRef = useRef(null);
@@ -12,6 +13,7 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const [volume, setVolume] = useState(1);
   // eslint-disable-next-line
   const [currentTime, setCurrentTime] = useState(0);
+  const { isMusicPlaying, updateMusicPlayingState } = useMusicContext();
 
   const handlePlayPause = () => {
     if (isPlaying) {
@@ -37,6 +39,30 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
     setCurrentTime(audioRef.current.currentTime);
     waveformRef.current.seekTo(audioRef.current.currentTime / audioRef.current.duration);
   };
+
+  useEffect(() => {
+    const updateIsPlaying = () => {
+      const isPlaying = !audioRef.current.paused;
+      updateMusicPlayingState(isPlaying);
+    };
+  
+    // Listen for events or use other methods to determine if music is playing
+    audioRef.current.addEventListener('playing', updateIsPlaying);
+    audioRef.current.addEventListener('pause', updateIsPlaying);
+  
+    // Initial check
+    updateIsPlaying();
+  
+    // Cleanup the event listeners
+    const cleanup = () => {
+      const currentAudioRef = audioRef.current; // Capture the current value
+      currentAudioRef.removeEventListener('playing', updateIsPlaying);
+      currentAudioRef.removeEventListener('pause', updateIsPlaying);
+    };
+  
+    return cleanup;
+  }, [audioRef, updateMusicPlayingState]);
+  
 
   useEffect(() => {
     waveformRef.current = WaveSurfer.create({
