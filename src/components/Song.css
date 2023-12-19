@@ -2,33 +2,38 @@
 
 .song-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
   width: 80vw;
-  height: 20vh;
   background-color: white;
 }
 
-.song-container img {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
+.left-column {
+  flex: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.left-column img {
+  width: auto;
+  max-height: 20vh;
+}
+
+.right-column {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.waveform-container {
+  flex-grow: 1;
 }
 
 .audio-controls {
   display: flex;
   align-items: center;
-  margin-right: 10px;
-}
-
-.waveform-container {
-  flex-grow: 1; /* Make the waveform container grow to fill available space */
-}
-
-/* Adjust styling for the audio player if needed */
-.rhap_container {
-  width: 100%;
 }

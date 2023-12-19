@@ -2,8 +2,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import './Song.css';
-
-// Import the necessary icon components from your chosen icon library
 import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp, FaVolumeDown } from 'react-icons/fa';
 
 const Song = ({ songTitle, albumArtwork, audioSrc }) => {
@@ -60,26 +58,30 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
 
   return (
     <div className="song-container">
-      <img src={albumArtwork} alt={`Album Artwork for ${songTitle}`} />
-      <div className="audio-controls">
-        <button onClick={handlePlayPause}>
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
-        <button onClick={handleMute}>
-          {isMuted ? <FaVolumeUp /> : <FaVolumeMute />}
-        </button>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          value={volume}
-          onChange={handleVolumeChange}
-        />
-        <FaVolumeDown /> 
-        <FaVolumeUp /> 
+      <div className="left-column">
+        <img src={albumArtwork} alt={`Album Artwork for ${songTitle}`} />
       </div>
-      <div className="waveform-container" id="waveform-container"></div>
+      <div className="right-column">
+        <div className="waveform-container" id="waveform-container"></div>
+        <div className="audio-controls">
+          <button onClick={handlePlayPause}>
+            {isPlaying ? <FaPause /> : <FaPlay />}
+          </button>
+          <button onClick={handleMute}>
+            {isMuted ? <FaVolumeUp /> : <FaVolumeMute />}
+          </button>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={handleVolumeChange}
+          />
+          <FaVolumeDown />
+          <FaVolumeUp />
+        </div>
+      </div>
       <audio
         ref={audioRef}
         src={audioSrc}
