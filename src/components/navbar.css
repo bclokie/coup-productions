@@ -36,6 +36,10 @@ a:hover {
 }
 
 .spinning-logo {
+  display: flex;
+  max-width: 8vh;
+  height: 8vh;
+  margin-right: 40px;
   animation: spin 2s linear infinite; /* Adjust the duration and timing function as needed */
 }
 

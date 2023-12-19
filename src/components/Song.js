@@ -1,4 +1,3 @@
-// Song.js
 import React, { useState, useRef, useEffect } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import './Song.css';
@@ -42,9 +41,13 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   };
 
   useEffect(() => {
+    let mounted = true; // Flag to track component mount/unmount
+  
     const updateIsPlaying = () => {
-      const isPlaying = !audioRef.current.paused;
-      updateMusicPlayingState(isPlaying);
+      if (mounted) {
+        const isPlaying = !audioRef.current.paused;
+        updateMusicPlayingState(isPlaying);
+      }
     };
   
     // Listen for events or use other methods to determine if music is playing
@@ -56,14 +59,16 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   
     // Cleanup the event listeners
     const cleanup = () => {
+      mounted = false; // Mark the component as unmounted
       const currentAudioRef = audioRef.current; // Capture the current value
-      currentAudioRef.removeEventListener('playing', updateIsPlaying);
-      currentAudioRef.removeEventListener('pause', updateIsPlaying);
+      if (currentAudioRef) {
+        currentAudioRef.removeEventListener('playing', updateIsPlaying);
+        currentAudioRef.removeEventListener('pause', updateIsPlaying);
+      }
     };
   
     return cleanup;
   }, [audioRef, updateMusicPlayingState]);
-  
 
   useEffect(() => {
     waveformRef.current = WaveSurfer.create({
