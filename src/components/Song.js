@@ -13,6 +13,7 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
   const [volume, setVolume] = useState(1);
   // eslint-disable-next-line
   const [currentTime, setCurrentTime] = useState(0);
+  // eslint-disable-next-line
   const { isMusicPlaying, updateMusicPlayingState } = useMusicContext();
 
   const handlePlayPause = () => {
