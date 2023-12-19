@@ -1,11 +1,11 @@
 // Home.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 
 const Home = () => {
-  //eslint-disable-next-line
   const [letters, setLetters] = useState([]);
+  const currentIndexRef = useRef(0);
 
   useEffect(() => {
     const originalLetters = 'coup.productions'.split('');
@@ -22,13 +22,30 @@ const Home = () => {
       });
     }, 50);
 
-    setTimeout(() => {
+    const revealLetters = () => {
       clearInterval(intervalId);
-      setLetters(originalLetters);
-    }, 10000);
+      currentIndexRef.current = 0;
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
+      const revealIntervalId = setInterval(() => {
+        setLetters((prevLetters) => {
+          const newLetters = [...prevLetters];
+          newLetters[currentIndexRef.current] = originalLetters[currentIndexRef.current];
+          currentIndexRef.current++;
+
+          if (currentIndexRef.current === originalLetters.length) {
+            clearInterval(revealIntervalId);
+          }
+          return newLetters;
+        });
+      }, 100);
+    };
+
+    setTimeout(revealLetters, 10000);
+
+    // Cleanup intervals on component unmount
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   const getRandomLetter = () => {
