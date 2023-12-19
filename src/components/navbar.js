@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+// Navbar.js
+
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { useMusicContext } from './MusicContext';
@@ -6,29 +8,6 @@ import { useMusicContext } from './MusicContext';
 const Navbar = () => {
   const location = useLocation();
   const { isMusicPlaying } = useMusicContext();
-
-  useEffect(() => {
-    const updateIsPlaying = () => {
-      console.log("Updating is playing");
-    };
-
-    // Attach event listeners
-    document.addEventListener('playing', updateIsPlaying);
-    document.addEventListener('pause', updateIsPlaying);
-
-    // Cleanup function
-    const cleanup = () => {
-      // Remove event listeners
-      document.removeEventListener('playing', updateIsPlaying);
-      document.removeEventListener('pause', updateIsPlaying);
-    };
-
-    // Initial check
-    updateIsPlaying();
-
-    // Cleanup on component unmount
-    return cleanup;
-  }, [isMusicPlaying]);
 
   return (
     <nav>
