@@ -15,7 +15,7 @@ const Navbar = () => {
         <li>
           <Link to="/">
             <div className={`logo-container ${isMusicPlaying ? 'spinning-logo' : ''}`}>
-              {location.pathname !== '/' && <img src={'logo.png'} alt="Logo" />}
+              {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
             </div>
           </Link>
         </li>
