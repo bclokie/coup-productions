@@ -1,15 +1,48 @@
 // Home.js
 
-import React from 'react';
-import './Home.css'; 
+import React, { useState, useEffect } from 'react';
+import './Home.css';
 
 const Home = () => {
+  //eslint-disable-next-line
+  const [letters, setLetters] = useState([]);
+
+  useEffect(() => {
+    const originalLetters = 'coup.productions'.split('');
+    const randomLetters = originalLetters.map(() => getRandomLetter());
+
+    setLetters(randomLetters);
+
+    const intervalId = setInterval(() => {
+      setLetters((prevLetters) => {
+        const newLetters = prevLetters.map((letter, index) =>
+          letter === originalLetters[index] ? letter : getRandomLetter()
+        );
+        return newLetters;
+      });
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(intervalId);
+      setLetters(originalLetters);
+    }, 5000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const getRandomLetter = () => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz.';
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    return characters.charAt(randomIndex);
+  };
+
   return (
     <div className="home-container">
       <img src="logo.png" alt="Logo" className="vector-image" />
       <div className="divider"></div>
       <div className="brand">
-        <h2>coup.productions</h2>
+      <h2>{letters.join('')}</h2>
       </div>
       <div className="divider"></div>
       <div className="social-icons">
