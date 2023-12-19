@@ -22,7 +22,7 @@ const Home = () => {
         <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook-messenger"></i>
         </a>
-        <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://soundcloud.com/markolivermusic" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-soundcloud"></i>
         </a>
         <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
