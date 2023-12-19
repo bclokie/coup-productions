@@ -49,14 +49,14 @@ const Song = ({ songTitle, albumArtwork, audioSrc }) => {
       <div className="waveform-container" id="waveform-container">
         {/* Waveform visualization will be rendered here */}
       </div>
-      <ReactAudioPlayer
+      {/* <ReactAudioPlayer
         ref={audioRef}
         src={audioSrc}
         autoPlay={false}
         controls
         onListen={handleTimeUpdate}
         onEnded={() => setIsPlaying(false)}
-      />
+      /> */}
     </div>
   );
 };
