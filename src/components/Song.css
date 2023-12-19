@@ -7,7 +7,7 @@
   border: 3px solid #ccc;
   padding: 2px;
   border-radius: 5px;
-  width: 80vw;
+  width: 98vw;
   background-color: white;
 }
 
@@ -31,6 +31,7 @@
 
 .waveform-container {
   flex-grow: 1;
+  margin-top: 5px;
 }
 
 .audio-controls {
