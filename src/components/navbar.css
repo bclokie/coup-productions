@@ -1,22 +1,26 @@
 /* Navbar.css */
 
 nav {
-  background-color: black;
-  height: 6vh;
+  background-color: rgba(250, 249, 249, 0.052);
+  height: 8vh;
+  margin-top: -1vh;
 }
+
+
 
 ul {
   list-style: none;
   display: flex;
   padding: 1;
-  margin: 10px auto;
+  margin: 0 auto;
   /* margin-left: 30px; */
-  font-size: 25px;
+  font-size: 30px;
 }
 
-/* li {
-  margin-right: 40px;
-} */
+li {
+  margin-top: 20px;
+  /* margin-right: 40px; */
+}
 
 a {
   text-decoration: none;
@@ -34,7 +38,7 @@ a:hover {
   display: flex;
   max-width: 8vh;
   height: 8vh;
-  margin-right: 40px;
+  /* margin-right: 40px; */
 }
 
 .spinning-logo {
