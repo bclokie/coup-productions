@@ -1,6 +1,6 @@
 // Navbar.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { useMusicContext } from './MusicContext';
@@ -8,30 +8,31 @@ import { useMusicContext } from './MusicContext';
 const Navbar = () => {
   const location = useLocation();
   const { isMusicPlaying } = useMusicContext();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav>
-      <ul>
-        <li>
+      <div className="nav-container">
+        <div className={`logo-container ${isMusicPlaying ? 'spinning-logo' : ''}`}>
           <Link to="/">
-            <div className={`logo-container ${isMusicPlaying ? 'spinning-logo' : ''}`}>
-              {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
-            </div>
+            {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
           </Link>
-        </li>
-        {/* <li>
-          <Link to="/info">Info</Link>
-        </li>
-        <li>
-          <Link to="/events">Events</Link>
-        </li>
-        <li>
-          <Link to="/music">Music</Link>
-        </li> */}
-        <li>
-          <Link to="/archive">Archive</Link>
-        </li>
-      </ul>
+        </div>
+        <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li>
+            <Link to="/archive">Archive</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
