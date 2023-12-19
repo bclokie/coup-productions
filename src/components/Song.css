@@ -20,7 +20,7 @@
 
 .left-column img {
   width: auto;
-  max-height: 20vh;
+  max-height: 30vh;
 }
 
 .right-column {
@@ -36,4 +36,5 @@
 .audio-controls {
   display: flex;
   align-items: center;
+  margin: 10px auto;
 }
