@@ -22,10 +22,12 @@ a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: color 0.15s ease-in-out, text-decoration 0.15s ease-in-out;
 }
 
 a:hover {
-  color: rgb(247, 24, 24); 
+  color: rgb(247, 24, 24);
+  text-decoration: underline; 
 }
 
 .logo-container {
