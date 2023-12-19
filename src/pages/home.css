@@ -53,13 +53,14 @@
   }
 
   .vector-image {
-    max-width: 70vw;
-    margin-bottom: 5vh;
+    max-width: 60vw;
+    margin-bottom: 3vh;
+    margin-top: -3vh;
   }
 
   .divider {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
   }
 
   .social-icons {
