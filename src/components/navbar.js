@@ -19,7 +19,7 @@ const Navbar = () => {
             </div>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/info">Info</Link>
         </li>
         <li>
@@ -27,7 +27,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/music">Music</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/archive">Archive</Link>
         </li>

@@ -20,12 +20,12 @@ const Home = () => {
         );
         return newLetters;
       });
-    }, 100);
+    }, 50);
 
     setTimeout(() => {
       clearInterval(intervalId);
       setLetters(originalLetters);
-    }, 5000);
+    }, 10000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
