@@ -13,7 +13,7 @@ const Home = () => {
       </div>
       <div className="divider"></div>
       <div className="social-icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/MarkOliverMusic" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook"></i>
         </a>
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
