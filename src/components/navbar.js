@@ -22,11 +22,6 @@ const Navbar = () => {
             {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
           </Link>
         </div>
-        <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li>
             <Link to="/archive">Archive</Link>
