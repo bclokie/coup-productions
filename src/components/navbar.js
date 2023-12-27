@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 import { useMusicContext } from './MusicContext';
 
@@ -21,6 +23,9 @@ const Navbar = () => {
           <Link to="/">
             {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
           </Link>
+        </div>
+        <div className="mobile-menu-icon" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} />
         </div>
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li>
