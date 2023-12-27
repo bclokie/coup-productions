@@ -7,7 +7,7 @@ import Home from './pages/Home';
 // import Info from './pages/Info';
 // import Events from './pages/Events';
 import Music from './pages/Music';
-// import Archive from './pages/Archive';
+import Archive from './pages/Archive';
 import { MusicProvider } from './components/MusicContext';
 
 const App = () => {
@@ -18,9 +18,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/music" element={<Music />} />
+          <Route path="/archive" element={<Archive />} />
           {/* <Route path="/info" element={<Info />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/archive" element={<Archive />} /> */}
+          <Route path="/events" element={<Events />} /> */}
         </Routes>
       </MusicProvider>
     </Router>
