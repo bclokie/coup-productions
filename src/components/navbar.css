@@ -67,6 +67,7 @@ a:hover {
 
 .menu-icon.open .bar:nth-child(1) {
   transform: translateY(5px) rotate(-45deg);
+  color: white;
 }
 
 .menu-icon.open .bar:nth-child(2) {
@@ -75,19 +76,6 @@ a:hover {
 
 .menu-icon.open .bar:nth-child(3) {
   transform: translateY(-5px) rotate(45deg);
-}
-
-.nav-links {
-  display: flex;
-  @media screen and (max-width: 768px) {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 10vh; /* Adjust top position */
-    left: 0;
-    width: 100%;
-    background-color: rgba(250, 249, 249, 0.052);
-  }
 }
 
 @media screen and (max-width: 768px) {
