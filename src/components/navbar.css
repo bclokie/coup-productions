@@ -73,7 +73,8 @@ a:hover {
   transition: 0.4s;
 }
 
-/* Media query for mobile view */
+/* Mobile View */
+
 @media only screen and (max-width: 768px) {
   .nav-links {
     display: none;
@@ -92,10 +93,19 @@ a:hover {
 
   .mobile-menu-icon {
     display: flex;
+    font-size: 30px;
+    justify-content: flex-end; /* Corrected from flex-direction */
   }
 
   .nav-container {
-    flex-direction: column;
+    flex-direction: row; /* Corrected from column */
+    justify-content: space-between; /* Added for spacing between logo and menu icon */
     align-items: center;
+  }
+
+  .logo-container img {
+    max-width: 8vh;
+    height: 8vh;
+    margin-right: 20px; /* Adjust as needed */
   }
 }
