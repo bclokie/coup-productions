@@ -94,18 +94,17 @@ a:hover {
   .mobile-menu-icon {
     display: flex;
     font-size: 30px;
-    justify-content: flex-end; /* Corrected from flex-direction */
+    justify-content: flex-end; 
   }
 
   .nav-container {
-    flex-direction: row; /* Corrected from column */
-    justify-content: space-between; /* Added for spacing between logo and menu icon */
+    flex-direction: row; 
+    justify-content: space-between; 
     align-items: center;
   }
 
   .logo-container img {
     max-width: 8vh;
     height: 8vh;
-    margin-right: 20px; /* Adjust as needed */
   }
 }
