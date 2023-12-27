@@ -5,11 +5,14 @@ nav {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 100%;
   margin: 0 auto;
   padding: 0 20px; /* Adjust as needed */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
 }
 
 ul {
@@ -40,6 +43,7 @@ a:hover {
   display: flex;
   max-width: 8vh;
   height: 8vh;
+  margin-right: 40px;
 }
 
 .spinning-logo {
