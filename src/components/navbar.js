@@ -16,6 +16,10 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav>
       <div className="nav-container">
@@ -27,9 +31,11 @@ const Navbar = () => {
         <div className="mobile-menu-icon" onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul className={`nav-links ${menuOpen ? 'open' : 'closed'}`}>
           <li>
-            <Link to="/archive">Archive</Link>
+            <Link to="/archive" onClick={closeMenu}>
+              Archive
+            </Link>
           </li>
         </ul>
       </div>
