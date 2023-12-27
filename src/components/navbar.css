@@ -11,8 +11,7 @@ nav {
 }
 
 .nav-links {
-  display: flex;
-  justify-content: flex-start;
+  margin-left: 100px;
 }
 
 ul {
@@ -43,7 +42,8 @@ a:hover {
   display: flex;
   max-width: 8vh;
   height: 8vh;
-  margin-right: 40px;
+  margin-right: -100px;
+  margin-top: 1vh;
 }
 
 .spinning-logo {
