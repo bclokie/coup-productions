@@ -9,7 +9,7 @@ const Home = () => {
   const currentIndexRef = useRef(0);
 
   useEffect(() => {
-    const originalLetters = 'coup.productions'.split('');
+    const originalLetters = 'Mark Oliver'.split('');
     const randomLetters = originalLetters.map(() => getRandomLetter());
 
     setLetters(randomLetters);
@@ -50,7 +50,7 @@ const Home = () => {
   }, []);
 
   const getRandomLetter = () => {
-    const characters = 'abcdefghijklmnopqrstuvwxyz.';
+    const characters = 'abcdefghijklMnOpqrstuvwxyz ';
     const randomIndex = Math.floor(Math.random() * characters.length);
     return characters.charAt(randomIndex);
   };
