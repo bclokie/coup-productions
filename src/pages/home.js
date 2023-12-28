@@ -69,8 +69,8 @@ const Home = () => {
         <a href="https://www.instagram.com/markoliverofficial/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-facebook-messenger"></i>
+        <a href="https://www.youtube.com/@markoliver4707" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-youtube"></i>
         </a>
         <a href="https://soundcloud.com/markolivermusic/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-soundcloud"></i>
