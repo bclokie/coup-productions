@@ -76,14 +76,13 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     position: absolute;
     top: 10vh;
     left: 0;
-    width: 100vw;
+    right: 0;
     background-color: rgba(250, 249, 249, 0.19);
-    z-index: 1;
     transition: transform 0.3s ease-in-out, opacity 0.6s ease-in-out; 
   }
 
@@ -91,24 +90,31 @@ a:hover {
     display: flex; 
     opacity: 0;
     transform: translateY(-50%);
+    position: fixed;
+    left: 0;
+    right: 0;
   }
 
   .nav-links.open {
     display: flex;
     transform: translateY(0);
     opacity: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
   }
 
   .mobile-menu-icon {
     display: flex;
-    font-size: 30px;
-    justify-content: flex-end;
+    font-size: 35px;
     z-index: 2; 
+    position: absolute;
+    top: 2;
+    left: 85vw;
   }
 
   .nav-container {
     flex-direction: row; 
-    justify-content: space-between; 
     align-items: center;
   }
 
