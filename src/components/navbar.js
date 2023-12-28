@@ -1,6 +1,6 @@
 // Navbar.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -20,6 +20,10 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
   return (
     <nav>
       <div className="nav-container">
@@ -34,7 +38,7 @@ const Navbar = () => {
         <ul className={`nav-links ${menuOpen ? 'open' : 'closed'}`}>
           <li>
             <Link to="/archive" onClick={closeMenu}>
-              Archive
+              archive
             </Link>
           </li>
         </ul>
