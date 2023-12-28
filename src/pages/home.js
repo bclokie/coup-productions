@@ -63,7 +63,7 @@ const Home = () => {
       </div>
       <div className="divider"></div>
       <div className="social-icons">
-        <a href="https://www.facebook.com/MarkOliverMusic" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/MarkOliverMusic/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook"></i>
         </a>
         <a href="https://www.instagram.com/markoliverofficial/" target="_blank" rel="noopener noreferrer">
@@ -72,11 +72,11 @@ const Home = () => {
         <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook-messenger"></i>
         </a>
-        <a href="https://soundcloud.com/markolivermusic" target="_blank" rel="noopener noreferrer">
+        <a href="https://soundcloud.com/markolivermusic/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-soundcloud"></i>
         </a>
-        <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-spotify"></i>
+        <a href="https://www.mixcloud.com/MOMusic/" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-mixcloud"></i>
         </a>
       </div>
     </div>
