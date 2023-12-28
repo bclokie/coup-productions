@@ -4,8 +4,8 @@ import './Archive.css';
 const Archive = () => {
   return (
     <div className="archive-page">
-      <h1>Archive</h1>
-      <p>Coming soon...</p>
+      <h1>Coming Soon</h1>
+      {/* <p>Coming soon...</p> */}
     </div>
   );
 }

@@ -1,7 +1,9 @@
 // Navbar.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 import { useMusicContext } from './MusicContext';
 
@@ -14,6 +16,14 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
+
   return (
     <nav>
       <div className="nav-container">
@@ -22,14 +32,14 @@ const Navbar = () => {
             {location.pathname !== '/' && <img src={'logo.svg'} alt="Logo" />}
           </Link>
         </div>
-        <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div className="mobile-menu-icon" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} />
         </div>
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul className={`nav-links ${menuOpen ? 'open' : 'closed'}`}>
           <li>
-            <Link to="/archive">Archive</Link>
+            <Link to="/archive" onClick={closeMenu}>
+              archive
+            </Link>
           </li>
         </ul>
       </div>
