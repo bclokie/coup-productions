@@ -20,6 +20,8 @@ ul {
   font-size: 30px;
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
 }
 
 li {
