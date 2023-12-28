@@ -117,4 +117,18 @@ a:hover {
     max-width: 7.5vh;
     height: 7.5vh;
   }
+
+  li {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    display: block;
+    width: 100%; /* Make the anchor fill the entire width of the li */
+    color: white;
+  }
 }
