@@ -17,7 +17,7 @@
 }
 
 .divider {
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   margin: 20px 0;
   margin-left: 25vw;
   margin-right: 25vw;
@@ -25,6 +25,11 @@
 
 .brand {
   font-size: 24px;
+}
+
+h2 {
+  font-family: 'Work Sans', sans-serif; /* Use Work Sans as the font family */
+  font-weight: 300; /* Set the font weight to Extra Light */
 }
 
 .social-icons {

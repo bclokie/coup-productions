@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
+import 'typeface-work-sans';
 
 const Home = () => {
   const [letters, setLetters] = useState([]);
