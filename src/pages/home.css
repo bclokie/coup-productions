@@ -53,9 +53,6 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-  .home-container {
-    height: 90vh;
-  }
 
   .vector-image {
     max-width: 60vw;
@@ -64,13 +61,18 @@ h2 {
   }
 
   .divider {
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
   }
 
   .social-icons {
     margin: 0 auto;
-    margin-top: 8vh;
+    margin-top: 5vh;
     font-size: 35px;
+  }
+
+  h2{
+    margin-top: -1vh;
+    margin-bottom: 1vh;
   }
 }
