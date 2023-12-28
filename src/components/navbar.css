@@ -1,5 +1,5 @@
 nav {
-  background-color: rgba(250, 249, 249, 0.19);
+  background-color: black;
   height: 10vh;
 }
 
@@ -35,7 +35,6 @@ a {
 
 a:hover {
   color: rgb(247, 24, 24);
-  text-decoration: underline; 
 }
 
 .logo-container img {
@@ -82,16 +81,16 @@ a:hover {
     position: absolute;
     top: 10vh;
     left: 0;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(250, 249, 249, 0.19);
     z-index: 1;
-    transition: transform 0.3s ease-in-out, opacity 0.6s ease-in-out; /* Add a transition to the transform property */
+    transition: transform 0.3s ease-in-out, opacity 0.6s ease-in-out; 
   }
 
   .nav-links.closed {
     display: flex; 
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 
   .nav-links.open {
