@@ -38,7 +38,7 @@ const Home = () => {
           }
           return newLetters;
         });
-      }, 100);
+      }, 200);
     };
 
     setTimeout(revealLetters, 3000);
@@ -50,7 +50,7 @@ const Home = () => {
   }, []);
 
   const getRandomLetter = () => {
-    const characters = 'abcdefghijklMnOpqrstuvwxyz ';
+    const characters = 'aefghijklMnOpqvr ';
     const randomIndex = Math.floor(Math.random() * characters.length);
     return characters.charAt(randomIndex);
   };
