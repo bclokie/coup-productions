@@ -9,15 +9,15 @@
 }
 
 .vector-image {
-  max-width: 25vw;
+  max-width: 23vw;
   height: auto;
   margin-top: 5vh;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 
 .divider {
-  border-bottom: 1px solid white;
-  margin: 20px 0;
+  border-bottom: 2px dotted white;
+  margin: 1px 0;
   margin-left: 28vw;
   margin-right: 28vw;
 }
@@ -29,6 +29,8 @@
 h2 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
 }
 
 .social-icons {

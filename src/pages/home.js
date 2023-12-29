@@ -1,59 +1,60 @@
 // Home.js
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+// import { useState, useEffect, useRef } from 'react';
 import './Home.css';
 import 'typeface-work-sans';
 
 const Home = () => {
-  const [letters, setLetters] = useState([]);
-  const currentIndexRef = useRef(0);
+  // const [letters, setLetters] = useState([]);
+  // const currentIndexRef = useRef(0);
 
-  useEffect(() => {
-    const originalLetters = 'Mark Oliver'.split('');
-    const randomLetters = originalLetters.map(() => getRandomLetter());
+  // useEffect(() => {
+  //   const originalLetters = 'Mark Oliver'.split('');
+  //   const randomLetters = originalLetters.map(() => getRandomLetter());
 
-    setLetters(randomLetters);
+  //   setLetters(randomLetters);
 
-    const intervalId = setInterval(() => {
-      setLetters((prevLetters) => {
-        const newLetters = prevLetters.map((letter, index) =>
-          letter === originalLetters[index] ? letter : getRandomLetter()
-        );
-        return newLetters;
-      });
-    }, 20);
+  //   const intervalId = setInterval(() => {
+  //     setLetters((prevLetters) => {
+  //       const newLetters = prevLetters.map((letter, index) =>
+  //         letter === originalLetters[index] ? letter : getRandomLetter()
+  //       );
+  //       return newLetters;
+  //     });
+  //   }, 20);
 
-    const revealLetters = () => {
-      clearInterval(intervalId);
-      currentIndexRef.current = 0;
+  //   const revealLetters = () => {
+  //     clearInterval(intervalId);
+  //     currentIndexRef.current = 0;
 
-      const revealIntervalId = setInterval(() => {
-        setLetters((prevLetters) => {
-          const newLetters = [...prevLetters];
-          newLetters[currentIndexRef.current] = originalLetters[currentIndexRef.current];
-          currentIndexRef.current++;
+  //     const revealIntervalId = setInterval(() => {
+  //       setLetters((prevLetters) => {
+  //         const newLetters = [...prevLetters];
+  //         newLetters[currentIndexRef.current] = originalLetters[currentIndexRef.current];
+  //         currentIndexRef.current++;
 
-          if (currentIndexRef.current === originalLetters.length) {
-            clearInterval(revealIntervalId);
-          }
-          return newLetters;
-        });
-      }, 200);
-    };
+  //         if (currentIndexRef.current === originalLetters.length) {
+  //           clearInterval(revealIntervalId);
+  //         }
+  //         return newLetters;
+  //       });
+  //     }, 200);
+  //   };
 
-    setTimeout(revealLetters, 3000);
+  //   setTimeout(revealLetters, 3000);
 
     // Cleanup intervals on component unmount
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(intervalId);
+  //   };
+  // }, []);
 
-  const getRandomLetter = () => {
-    const characters = 'aefghijklMnOpqvr ';
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    return characters.charAt(randomIndex);
-  };
+  // const getRandomLetter = () => {
+  //   const characters = 'aefghijklMnOpqvr ';
+  //   const randomIndex = Math.floor(Math.random() * characters.length);
+  //   return characters.charAt(randomIndex);
+  // };
 
   const handleDeepLink = (url) => {
     window.location.href = url;
@@ -64,7 +65,7 @@ const Home = () => {
       <img src="logo.png" alt="Logo" className="vector-image" />
       <div className="divider"></div>
       <div className="brand">
-        <h2>{letters.join('')}</h2>
+        <h2>coup productions</h2>
       </div>
       <div className="divider"></div>
       <div className="social-icons">
