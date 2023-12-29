@@ -6,6 +6,7 @@ const Archive = () => {
     <div className="archive-page">
       <h1>coming soon</h1>
       {/* <p>Coming soon...</p> */}
+      <img src="smiley.png" alt="Smiley" className="smiley" />
     </div>
   );
 }
