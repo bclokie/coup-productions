@@ -27,8 +27,8 @@
 }
 
 h2 {
-  font-family: 'Work Sans', sans-serif; /* Use Work Sans as the font family */
-  font-weight: 300; /* Set the font weight to Extra Light */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
 }
 
 .social-icons {
@@ -39,21 +39,25 @@ h2 {
   margin-left: 28vw;
   margin-right: 28vw;
 
-  a {
+  /* Explicitly set styles for button */
+  button {
     color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 35px; /* Adjust the font size as needed */
     margin: 0 10px;
-    text-decoration: none;
-    transition: transform 0.3s; 
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
   }
 
-  a:hover {
-    transform: scale(1.4); 
-    cursor: pointer;
+  /* Explicitly set styles for button:hover */
+  button:hover {
+    transform: scale(1.4);
   }
 }
 
 @media screen and (max-width: 768px) {
-
   .vector-image {
     max-width: 60vw;
     margin-bottom: 3vh;
@@ -71,7 +75,7 @@ h2 {
     font-size: 35px;
   }
 
-  h2{
+  h2 {
     margin-top: -1vh;
     margin-bottom: 1vh;
   }

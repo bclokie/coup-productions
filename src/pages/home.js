@@ -55,30 +55,54 @@ const Home = () => {
     return characters.charAt(randomIndex);
   };
 
+  const handleDeepLink = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <div className="home-container">
       <img src="logo.png" alt="Logo" className="vector-image" />
       <div className="divider"></div>
       <div className="brand">
-      <h2>{letters.join('')}</h2>
+        <h2>{letters.join('')}</h2>
       </div>
       <div className="divider"></div>
       <div className="social-icons">
-        <a href="https://www.facebook.com/MarkOliverMusic/" target="_blank" rel="noopener noreferrer">
+        <button
+          onClick={() =>
+            handleDeepLink('https://www.facebook.com/MarkOliverMusic/')
+          }
+        >
           <i className="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/markoliverofficial/" target="_blank" rel="noopener noreferrer">
+        </button>
+        <button
+          onClick={() =>
+            handleDeepLink('https://www.instagram.com/markoliverofficial/')
+          }
+        >
           <i className="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/@markoliver4707" target="_blank" rel="noopener noreferrer">
+        </button>
+        <button
+          onClick={() =>
+            handleDeepLink('https://www.youtube.com/@markoliver4707')
+          }
+        >
           <i className="fab fa-youtube"></i>
-        </a>
-        <a href="https://soundcloud.com/markolivermusic/" target="_blank" rel="noopener noreferrer">
+        </button>
+        <button
+          onClick={() =>
+            handleDeepLink('https://soundcloud.com/markolivermusic/')
+          }
+        >
           <i className="fab fa-soundcloud"></i>
-        </a>
-        <a href="https://www.mixcloud.com/MOMusic/" target="_blank" rel="noopener noreferrer">
+        </button>
+        <button
+          onClick={() =>
+            handleDeepLink('https://www.mixcloud.com/MOMusic/')
+          }
+        >
           <i className="fab fa-mixcloud"></i>
-        </a>
+        </button>
       </div>
     </div>
   );
