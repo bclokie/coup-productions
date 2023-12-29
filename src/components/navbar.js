@@ -1,9 +1,7 @@
-// Navbar.js
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Import the close (X) icon
 import './Navbar.css';
 import { useMusicContext } from './MusicContext';
 
@@ -35,13 +33,19 @@ const Navbar = () => {
         <div className="mobile-menu-icon" onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-        <ul className={`nav-links ${menuOpen ? 'open' : 'closed'}`}>
-          <li>
-            <Link to="/archive" onClick={closeMenu}>
-              archive
-            </Link>
-          </li>
-        </ul>
+        <div className={`overlay ${menuOpen ? 'open' : 'closed'}`} onClick={closeMenu}></div>
+        <div className={`nav-links ${menuOpen ? 'open' : 'closed'}`}>
+          <div className="close-icon" onClick={closeMenu}>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+          <ul>
+            <li>
+              <Link to="/archive" onClick={closeMenu}>
+                archive
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
