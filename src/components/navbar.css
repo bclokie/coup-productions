@@ -45,12 +45,12 @@ a:hover {
   display: flex;
   max-width: 8vh;
   height: 8vh;
-  margin-right: -180px;
+  margin-right: 0px;
   margin-top: 1vh;
 }
 
 .spinning-logo {
-  animation: spin 2s linear infinite; /* Adjust the duration and timing function as needed */
+  animation: spin 2s linear infinite; 
 }
 
 @keyframes spin {
