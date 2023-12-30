@@ -17,13 +17,16 @@
 
 .divider {
   border-bottom: 2px dotted white;
-  margin: 1px 0;
+  margin: 0px 0;
   margin-left: 28vw;
   margin-right: 28vw;
 }
 
 .brand {
   font-size: 30px;
+  transform: scaleY(0.7);
+  transform-origin: middle;
+  display: inline-block;
 }
 
 h2 {
